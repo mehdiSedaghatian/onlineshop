@@ -1,0 +1,190 @@
+{% extends 'shared/_layout.html' %}
+{% load render_partial %}
+{% load poll_extras %}
+{% load thumbnail %}
+{% load i18n %}
+{% block title %}
+    {{ product.title }}
+{% endblock %}
+{% block header_references %}
+    <link rel="stylesheet" href="/static/lib/image_lightbox/css/lightbox.min.css">
+{% endblock %}
+{% block footer_references %}
+    {#    <script src="/static/lib/image_lightbox/js/lightbox-plus-jquery.min.js"></script>#}
+    <script src="/static/lib/image_lightbox/js/lightbox.min.js"></script>
+{% endblock %}
+{% block content %}
+    <section>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-12 padding-right">
+                    <div class="product-details"><!--product-details-->
+                        <div class="col-sm-5">
+                            <div class="view-product">
+                                {% if product.image %}
+                                    <img src="{{ product.image.url }}" alt="" id="main_image">
+                                {% else %}
+                                    <img src="/static/images/product-details/1.jpg" alt="" id="main_image">
+                                {% endif %}
+                                <h3>
+                                    <a id="show_large_image_modal" href="{{ product.image.url }}"
+                                       data-lightbox="product-image">
+                                        {% trans 'zoom' %}
+                                    </a>
+                                </h3>
+                            </div>
+                            <div id="similar-product" class="carousel slide" data-ride="carousel">
+
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    {% for gallery in galleries %}
+                                        <div class="item {% if forloop.first %}active {% endif %}">
+                                            {% for item in gallery %}
+                                                <a onclick="showLargeImage('{{ item.image.url }}')"><img
+                                                        src="{{ item.image.url }}" alt=""
+                                                        style="width:75px; , height: 70px;"></a>
+                                            {% endfor %}
+
+
+                                        </div>
+                                    {% endfor %}
+
+
+                                </div>
+
+                                <!-- Controls -->
+                                <a class="right item-control" href="#similar-product" data-slide="next">
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                                <a class="left item-control" href="#similar-product" data-slide="prev">
+                                    <i class="fa fa-angle-left"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="product-information"><!--/product-information-->
+                                {#                                {% if product.image %}#}
+                                {#                                    <img src="{{ product.image.url }}" alt=""/>#}
+                                {#                                {% else %}#}
+                                {#                                    <img src="/static/images/product-details/new.png" class="newarrival" alt=""/>#}
+                                {#                                {% endif %}#}
+
+                                <div>
+                                    <h2>{{ product.title }}</h2>
+                                    <p>{% trans 'id' %} :{{ product.id }} </p>
+                                </div>
+                                <div>
+									<span>
+										<span>{% trans 'price' %} : {{ product.price |three_digits_currency }} </span>
+									</span>
+                                    <span class="pull-right">
+
+                                            		<label> </label>
+										<input type="number" id="product_count" min="1" value="1"
+                                               class="search_box"/>
+										<button onclick="addProductOrder({{ product.id }})"
+                                                class="btn btn-fefault cart">
+											{% trans 'add to shopping cart' %}
+                                            <i class="fa fa-shopping-cart"></i>
+										</button>
+
+									</span>
+                                </div>
+                                <div>
+
+                                    {% if product.brand %}
+                                        <p><b>{% trans 'brand' %} :</b> {{ product.brand }} </p>
+                                    {% endif %}
+                                </div>
+                                <div class="socials-share share">
+                                    <ul>
+                                        <a href="{% url 'not_yet_completed' %}">
+                                            <li>
+                                                <label>{% trans 'instagram' %}</label>
+                                                <img src="/static/images/product-details/Instagram.png">
+                                            </li>
+                                        </a>
+                                        <a href="{% url 'not_yet_completed' %}">
+                                            <li>
+                                                <label>{% trans 'telegram' %}</label>
+                                                <img src="/static/images/product-details/Telegram.png">
+                                            </li>
+                                        </a>
+                                    </ul>
+                                </div>
+
+                            </div><!--/product-information-->
+                        </div>
+                    </div><!--/product-details-->
+
+                    <div class="category-tab shop-details-tab"><!--category-tab-->
+                        <div class="col-sm-12">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#details" data-toggle="tab">{% trans 'detail' %}</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane fade active in" id="details">
+                                {{ product.description |safe }}
+                            </div>
+
+
+
+                        </div>
+                    </div><!--/category-tab-->
+
+                    {% if related_products %}
+                        <div class="recommended_items"><!--recommended_items-->
+                            <h2 class="title text-center">{% trans 'related products' %}</h2>
+
+                            <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    {% for related_product in related_products %}
+                                        <div class="item {% if forloop.first %} active  {% endif %}">
+                                            {% for product in related_product %}
+                                                <div class="col-sm-4">
+                                                    <div class="product-image-wrapper">
+                                                        <div class="single-products">
+                                                           <div class="productinfo text-center">
+                                                        {% thumbnail product.image "268x250" quality=90 crop='center' as im %}
+                                                            <img src="{{ im.url }}" alt=""/>
+                                                        {% endthumbnail %}
+                                                        <h2>{{ product.price | three_digits_currency }}</h2>
+                                                        <p>{{ product.title }}</p>
+                                                        <a href="{% url 'product-detail' slug=product.slug %}"
+                                                           class="btn btn-default add-to-cart">
+                                                            {% trans 'product detail' %}</a>
+                                                    </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+
+                                        </div>
+                                    {% endfor %}
+
+
+                                </div>
+                                {% if related_products|length > 1 %}
+                                    <a class="left recommended-item-control" href="#recommended-item-carousel"
+                                       data-slide="prev">
+                                        <i class="fa fa-angle-left"></i>
+                                    </a>
+                                    <a class="right recommended-item-control" href="#recommended-item-carousel"
+                                       data-slide="next">
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                {% endif %}
+
+                            </div>
+                        </div><!--/recommended_items-->
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'shared/_layout.html' %}
+{% load render_partial %}
+{% load poll_extras %}
+{% load i18n %}
+{% block title %}
+    detail
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                {% render_partial 'user_panel_module.views.user_panel_menu_component' %}
+            </div>
+            <div class="col-md-8">
+                <table class="table table-responsive table-hover-table-striped">
+                    <tr>
+                        <th>{% trans 'number' %}</th>
+                        <th>{% trans 'date' %}</th>
+                        <th>{% trans 'price' %}</th>
+                        <th>{% trans 'title' %}</th>
+                        <th>{% trans 'photo' %}</th>
+                    </tr>
+                    {% for detail in order.orderdetail_set.all %}
+                    <tr>
+                        <td>{{ detail.id }}</td>
+                        <td>{{ order.payment_date }}</td>
+                        <td>{{ detail.product.price|three_digits_currency }}</td>
+                        <td>{{ detail.product.title }}</td>
+                        <td>
+                            <a href="{% url 'product-detail' slug=detail.product.slug %}">
+                                <img style="width: 70px; height: 70px" src="{{ detail.product.image.url }}" alt="">
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

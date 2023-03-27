@@ -1,0 +1,14 @@
+{% load i18n %}
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="true">
+        {% trans 'order by' %}
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="{% url 'article_list_stars' %}">{% trans 'sort by popularity' %}</a></li>
+        <li><a href="{% url 'article_list_views' %}">{% trans 'sort by number of views' %}</a></li>
+        <li><a href="{% url 'article_list_create_date' %}">{% trans 'sort by publication date' %}</a></li>
+    </ul>
+</div>
+

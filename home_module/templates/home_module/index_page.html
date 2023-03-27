@@ -1,0 +1,228 @@
+{% extends 'shared/_layout.html' %}
+{% load thumbnail %}
+{% load poll_extras %}
+{% load i18n %}
+{% block title %}
+    shop
+{% endblock %}
+{% block content %}
+
+    <section id="slider"><!--slider-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="slider-carousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#slider-carousel" data-slide-to="1"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            {% for slider in sliders %}
+
+                                <div class="item {% if forloop.first %}
+                                active
+                                {% endif %}  ">
+                                    <div class="col-sm-3">
+                                        <h1>  {% trans ' shop ' %} <span>{% trans ' mehdi ' %}  </span></h1>
+                                        <h2>{{ slider.title }}</h2>
+                                        <p>{{ slider.description }} </p>
+                                        <a href="{{ slider.url }}"
+                                           class="btn btn-default get">{{ slider.url_title }}</a>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        {% thumbnail slider.image "900x350" quality=90 as im %}
+                                            <img src="{{ im.url }}" class="girl img-responsive" alt=""/>
+                                        {% endthumbnail %}
+
+
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section><!--/slider-->
+
+    <section>
+        <div class="container">
+            <div class="row">
+
+                <div class="recommended_items"><!--NewProduct_items-->
+                    <h2 class="title text-center">{% trans 'latest products' %}</h2>
+
+                    <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            {% for latest_product in latest_products %}
+                                <div class="item {% if forloop.first %} active {% endif %}">
+                                    {% for product in latest_product %}
+                                        <div class="col-sm-3">
+                                            <div class="product-image-wrapper">
+                                                <div class="single-products">
+                                                    <div class="productinfo text-center">
+                                                        {% thumbnail product.image "268x250" quality=90 crop='center' as im %}
+                                                            <img src="{{ im.url }}" alt=""/>
+                                                        {% endthumbnail %}
+                                                        <h2>{{ product.price | three_digits_currency }}</h2>
+                                                        <p>{{ product.title }}</p>
+                                                        <a href="{% url 'product-detail' slug=product.slug %}"
+                                                           class="btn btn-default add-to-cart">
+                                                           {% trans ' product detail' %}</a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+
+
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                        <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+
+                </div><!--/NewProduct_items-->
+
+                <div class="col-sm-12 padding-right">
+                    <div class="features_items"><!--RetailSale_items-->
+                        <a href="shop-2.html"><h2 class="title text-center">{% trans 'most visit products' %}</h2></a>
+                        <div id="new-item-carousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                {% for most_visit_product in most_visit_products %}
+                                    <div class="item {% if forloop.first %} active {% endif %}">
+                                        {% for sub_product in most_visit_product %}
+                                            <div class="col-sm-3">
+                                                <div class="product-image-wrapper">
+                                                    <div class="single-products">
+                                                        <div class="productinfo text-center">
+                                                            {% thumbnail sub_product.image "268x250" quality=90 crop='center' as im %}
+                                                                <img src="{{ im.url }}">
+                                                            {% endthumbnail %}
+                                                            <h2>{{ sub_product.price | three_digits_currency }}</h2>
+                                                            <p>{{ sub_product.title }}</p>
+                                                            <a href="{% url 'product-detail' slug=sub_product.slug %}"
+                                                               class="btn btn-default add-to-cart">
+                                                                {% trans 'product detail' %}</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+
+
+                                    </div>
+                                {% endfor %}
+
+
+                            </div>
+                            <a class="left recommended-item-control" href="#new-item-carousel" data-slide="prev">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a class="right recommended-item-control" href="#new-item-carousel" data-slide="next">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div><!--RetailSale_items-->
+
+                    <div class="features_items"><!--WholeSale_items-->
+                        <a href="shop.html"><h2 class="title text-center">{% trans 'most bought product' %}</h2></a>
+                        <div id="major-item-carousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                {% for most_bought_product in most_bought_products %}
+                                    <div class="item {% if forloop.first %}active{% endif %}">
+                                        {% for product in most_bought_product %}
+                                            <div class="col-sm-3">
+                                                <div class="product-image-wrapper">
+                                                    <div class="single-products">
+                                                        <div class="productinfo text-center">
+                                                            {% thumbnail product.image "268x250" quality=90 crop='center' as im %}
+                                                                <img src="{{ im.url }}">
+                                                            {% endthumbnail %}
+                                                            <h2>{{ product.price |three_digits_currency }}</h2>
+                                                            <p>{{ product.title }}</p>
+                                                            <a href="{% url 'product-detail' slug=product.slug %}"
+                                                               class="btn btn-default add-to-cart">
+                                                                {% trans 'product detail' %}</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+
+                                    </div>
+                                {% endfor %}
+
+
+                            </div>
+                            <a class="left recommended-item-control" href="#major-item-carousel" data-slide="prev">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a class="right recommended-item-control" href="#major-item-carousel" data-slide="next">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div><!--WholeSale_items-->
+
+                    <div class="category-tab"><!--category-tab-->
+                        <div class="col-sm-12">
+                            <ul class="nav nav-tabs">
+                                {% for categories_product in categories_products %}
+                                    <li class="{% if forloop.first %}active {% endif %}"><a
+                                            href="#Tab_{{ categories_product.id }}"
+                                            data-toggle="tab">{{ categories_product.title }}</a></li>
+                                {% endfor %}
+
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            {% for categories_product in categories_products %}
+                                <div class="tab-pane fade {% if forloop.first %}active in{% endif %} "
+                                     id="Tab_{{ categories_product.id }}">
+                                    {% for product in categories_product.products %}
+                                        <div class="col-sm-3">
+                                            <div class="product-image-wrapper">
+                                                <div class="single-products">
+                                                    <div class="productinfo text-center">
+                                                        {% thumbnail product.image "268x250" quality=90 crop='center' as im %}
+                                                            <img src="{{ im.url }}">
+                                                        {% endthumbnail %}
+                                                        <h2>{{ product.price | three_digits_currency}}</h2>
+                                                        <p>{{ product.title }}</p>
+                                                        <a href="{% url 'product-detail' slug=product.slug %}"
+                                                           class="btn btn-default add-to-cart">
+                                                            {% trans 'product detail' %}</a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+
+
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </div><!--/category-tab-->
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+{% endblock %}

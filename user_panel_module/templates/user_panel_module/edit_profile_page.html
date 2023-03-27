@@ -1,0 +1,26 @@
+{% extends 'shared/_layout.html' %}
+{% load render_partial %}
+{% load i18n %}
+{% block title %}
+    edit profile
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                {% render_partial 'user_panel_module.views.user_panel_menu_component' %}
+                {% if current_user.avatar %}
+                    <img src="{{ current_user.avatar.url }}" alt="" style="width: 100%">
+
+                {% endif %}
+            </div>
+            <div class="col-md-8">
+                <form action="{% url 'edit_profile_page' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ edit_profile }}
+                    <button type="submit" class="btn btn-success">{% trans 'submit' %}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

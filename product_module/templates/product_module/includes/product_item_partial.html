@@ -1,0 +1,27 @@
+{% load thumbnail %}
+{% load poll_extras %}
+{% load i18n %}
+<div class="col-sm-4">
+    <div class="product-image-wrapper">
+        <div class="single-products">
+            <div class="productinfo text-center">
+                {% if product.image %}
+                    {% thumbnail product.image "268x250" quality=90 crop='center' as im %}
+                        <img src="{{ im.url }}">
+                    {% endthumbnail %}
+
+                {% else %}
+                    <img src="/images/shop/product.jpg" alt=""/>
+                {% endif %}
+
+                <h2>{{ product.price |three_digits_currency }} </h2>
+                <p>{{ product.title }}</p>
+                <a href="{% url 'product-detail' slug=product.slug %}"
+                   class="btn btn-default add-to-cart">
+                    {% trans 'product detail' %}</a>
+            </div>
+
+        </div>
+
+    </div>
+</div>

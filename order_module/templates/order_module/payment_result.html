@@ -1,0 +1,27 @@
+{% extends 'shared/_layout.html' %}
+{% block title %}
+    payment result
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {% if success %}
+                    <div class="alert alert-success">
+                        {{ success }}
+                    </div>
+                {% endif %}
+                {% if info %}
+                    <div class="alert alert-info">
+                        {{ info }}
+                    </div>
+                {% endif %}
+                {% if error %}
+                    <div class="alert alert-danger">
+                        {{ error }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

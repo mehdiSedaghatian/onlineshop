@@ -1,0 +1,465 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-27 18:52+0330\n"
+"PO-Revision-Date: 2023-03-27 18:56+0000\n"
+"Last-Translator: mehdi sedaghat <mahbis171@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Translated-Using: django-rosetta 0.9.8\n"
+
+#: .\account_module\forms.py:9 .\account_module\forms.py:42
+#: .\account_module\forms.py:61
+msgid "email..."
+msgstr "پست الکترونیک"
+
+#: .\account_module\forms.py:17 .\account_module\forms.py:50
+#: .\account_module\forms.py:72
+msgid "password..."
+msgstr "کلمه عبور"
+
+#: .\account_module\forms.py:25 .\account_module\forms.py:80
+#: .\user_panel_module\forms.py:63
+msgid "confirm password..."
+msgstr "رمز عبور را تایید کنید"
+
+#: .\account_module\templates\account_module\forgot_password.html:14
+msgid "you can retrieval your password with confirm your account"
+msgstr "شما می توانید رمز عبور خود را با تایید حساب خود بازیابی کنید"
+
+#: .\account_module\templates\account_module\forgot_password.html:24
+msgid "retrieval pass"
+msgstr " بازیابی"
+
+#: .\account_module\templates\account_module\login.html:14
+msgid "sign in user"
+msgstr "کاربر وارد شوید"
+
+#: .\account_module\templates\account_module\login.html:26
+#: .\account_module\templates\account_module\reset_password.html:28
+msgid "sign in"
+msgstr "ورود"
+
+#: .\account_module\templates\account_module\login.html:38
+msgid "forgot password"
+msgstr "رمز عبور را فراموش کرده ام"
+
+#: .\account_module\templates\account_module\register.html:13
+msgid "new user registration"
+msgstr "ثبت نام کاربر جدید"
+
+#: .\account_module\templates\account_module\register.html:30
+msgid "Register"
+msgstr " ثبت نام"
+
+#: .\account_module\templates\account_module\register.html:36
+msgid "please check your email and active your account"
+msgstr "لطفا ایمیل خود را بررسی کنید و حساب خود را فعال کنید"
+
+#: .\account_module\templates\account_module\reset_password.html:14
+msgid "reset password"
+msgstr "بازنشانی رمز عبور"
+
+#: .\article_module\templates\article_module\article_detail_page.html:51
+#| msgid "about us"
+msgid "about author"
+msgstr "در مورد نویسنده"
+
+#: .\article_module\templates\article_module\article_detail_page.html:62
+#: .\article_module\templates\article_module\includes\article_comments_partial.html:3
+msgid "comments"
+msgstr "نظرات"
+
+#: .\article_module\templates\article_module\article_detail_page.html:79
+#: .\article_module\templates\article_module\includes\article_comments_partial.html:19
+msgid "answer"
+msgstr "پاسخ"
+
+#: .\article_module\templates\article_module\article_detail_page.html:113
+msgid "type your comment"
+msgstr "نظر خود را تایپ کنید"
+
+#: .\article_module\templates\article_module\article_detail_page.html:117
+#| msgid "your message"
+msgid "text message"
+msgstr "پیام متنی"
+
+#: .\article_module\templates\article_module\article_detail_page.html:122
+msgid "send comment"
+msgstr "ارسال نظر"
+
+#: .\article_module\templates\article_module\article_detail_page.html:129
+msgid "for made comment you most"
+msgstr "برای اظهار نظر شما بیشتر"
+
+#: .\article_module\templates\article_module\article_detail_page.html:129
+msgid "login"
+msgstr "وارد شدید"
+
+#: .\article_module\templates\article_module\article_page_create_date.html:22
+#| msgid "articles"
+msgid "latest articles"
+msgstr "آخرین مقالات"
+
+#: .\article_module\templates\article_module\article_page_create_date.html:42
+#: .\article_module\templates\article_module\articles_page.html:42
+#: .\article_module\templates\article_module\articles_page_order_by_stars.html:42
+#: .\article_module\templates\article_module\articles_page_views.html:42
+msgid "read more"
+msgstr "ادامه مطلب"
+
+#: .\article_module\templates\article_module\article_page_create_date.html:50
+#: .\article_module\templates\article_module\articles_page.html:50
+#: .\article_module\templates\article_module\articles_page_order_by_stars.html:50
+#: .\article_module\templates\article_module\articles_page_views.html:50
+#: .\product_module\templates\product_module\product_list.html:25
+msgid "previous"
+msgstr "قبلی"
+
+#: .\article_module\templates\article_module\article_page_create_date.html:61
+#: .\article_module\templates\article_module\articles_page.html:61
+#: .\article_module\templates\article_module\articles_page_order_by_stars.html:61
+#: .\article_module\templates\article_module\articles_page_views.html:61
+#: .\product_module\templates\product_module\product_list.html:36
+msgid "next"
+msgstr "بعدی"
+
+#: .\article_module\templates\article_module\articles_page.html:22
+#: .\templates\shared\site_header_component.html:93
+msgid "articles"
+msgstr "مقالات"
+
+#: .\article_module\templates\article_module\articles_page_order_by_stars.html:22
+#| msgid "articles"
+msgid "popular articles"
+msgstr "مقالات محبوب"
+
+#: .\article_module\templates\article_module\articles_page_views.html:22
+#| msgid "most visit products"
+msgid "most visit articles"
+msgstr "بیشترین بازدید از مقالات"
+
+#: .\article_module\templates\article_module\components\filter_articles_component.html:5
+msgid "order by"
+msgstr "مرتب سازی بر اساس"
+
+#: .\article_module\templates\article_module\components\filter_articles_component.html:9
+msgid "sort by popularity"
+msgstr "مرتب سازی بر اساس محبوبیت"
+
+#: .\article_module\templates\article_module\components\filter_articles_component.html:10
+msgid "sort by number of views"
+msgstr "مرتب سازی بر اساس تعداد بازدید"
+
+#: .\article_module\templates\article_module\components\filter_articles_component.html:11
+msgid "sort by publication date"
+msgstr "مرتب سازی بر اساس تاریخ انتشار"
+
+#: .\contact_module\forms.py:27 .\user_panel_module\forms.py:33
+msgid "name"
+msgstr "نام"
+
+#: .\contact_module\forms.py:28
+msgid "your email"
+msgstr "ایمیل شما"
+
+#: .\contact_module\forms.py:29
+msgid "title..."
+msgstr " عنوان"
+
+#: .\contact_module\forms.py:30
+msgid "your message"
+msgstr "پیغام تو"
+
+#: .\contact_module\templates\contact_module\contact_us_page.html:12
+#: .\templates\shared\site_header_component.html:106
+msgid "contact us"
+msgstr "با ما تماس بگیرید"
+
+#: .\contact_module\templates\contact_module\contact_us_page.html:42
+msgid "send"
+msgstr " ارسال"
+
+#: .\contact_module\templates\contact_module\contact_us_page.html:62
+msgid "social media"
+msgstr "رسانه های اجتماعی"
+
+#: .\contact_module\templates\contact_module\contact_us_page.html:67
+#: .\product_module\templates\product_module\product_detail.html:105
+#: .\templates\shared\site_footer_component.html:13
+msgid "instagram"
+msgstr "اینستاگرام"
+
+#: .\contact_module\templates\contact_module\contact_us_page.html:73
+#: .\product_module\templates\product_module\product_detail.html:111
+#: .\templates\shared\site_footer_component.html:19
+msgid "telegram"
+msgstr "تلگرام"
+
+#: .\home_module\forms.py:10
+msgid "search..."
+msgstr "...جستجو کردن"
+
+#: .\home_module\templates\home_module\about_page.html:15
+#: .\templates\shared\site_header_component.html:100
+msgid "about us"
+msgstr "درباره ما"
+
+#: .\home_module\templates\home_module\index_page.html:26
+msgid " shop "
+msgstr "فروشگاه"
+
+#: .\home_module\templates\home_module\index_page.html:26
+msgid " mehdi "
+msgstr "مهدی"
+
+#: .\home_module\templates\home_module\index_page.html:60
+msgid "latest products"
+msgstr "آخرین محصولات"
+
+#: .\home_module\templates\home_module\index_page.html:78
+msgid " product detail"
+msgstr "جزئیات محصول"
+
+#: .\home_module\templates\home_module\index_page.html:103
+msgid "most visit products"
+msgstr "بیشترین بازدید از محصولات"
+
+#: .\home_module\templates\home_module\index_page.html:120
+#: .\home_module\templates\home_module\index_page.html:160
+#: .\home_module\templates\home_module\index_page.html:208
+#: .\product_module\templates\product_module\includes\product_item_partial.html:21
+#: .\product_module\templates\product_module\product_detail.html:159
+msgid "product detail"
+msgstr "جزئیات محصول"
+
+#: .\home_module\templates\home_module\index_page.html:143
+msgid "most bought product"
+msgstr "بیشترین محصول خریداری شده"
+
+#: .\home_module\templates\home_module\search_products.html:15
+msgid "search"
+msgstr "جستجو کردن"
+
+#: .\home_module\templates\home_module\search_products.html:24
+#: .\product_module\templates\product_module\product_list.html:15
+#: .\templates\shared\site_header_component.html:87
+#: .\user_panel_module\templates\user_panel_module\user_basket_content.html:13
+msgid "products"
+msgstr "محصولات"
+
+#: .\product_module\models.py:9 .\product_module\models.py:23
+#: .\product_module\models.py:36 .\site_module\models.py:51
+#: .\user_panel_module\templates\user_panel_module\user_shopping_detail.html:20
+msgid "title"
+msgstr "عنوان"
+
+#: .\product_module\models.py:41
+msgid "short description"
+msgstr "توضیح کوتاه"
+
+#: .\product_module\models.py:42 .\site_module\models.py:52
+msgid "description"
+msgstr "شرح"
+
+#: .\product_module\templates\product_module\components\product_brand_component.html:3
+msgid "brands"
+msgstr "برندها"
+
+#: .\product_module\templates\product_module\components\product_categories_component.html:2
+msgid "products category"
+msgstr " دسته بندی محصولات"
+
+#: .\product_module\templates\product_module\product_detail.html:33
+msgid "zoom"
+msgstr "بزرگنمایی"
+
+#: .\product_module\templates\product_module\product_detail.html:76
+msgid "id"
+msgstr "شناسه"
+
+#: .\product_module\templates\product_module\product_detail.html:80
+#: .\user_panel_module\templates\user_panel_module\user_basket_content.html:15
+#: .\user_panel_module\templates\user_panel_module\user_shopping.html:18
+#: .\user_panel_module\templates\user_panel_module\user_shopping_detail.html:19
+msgid "price"
+msgstr "قیمت"
+
+#: .\product_module\templates\product_module\product_detail.html:89
+msgid "add to shopping cart"
+msgstr "به سبد خرید اضافه کنید"
+
+#: .\product_module\templates\product_module\product_detail.html:98
+msgid "brand"
+msgstr "نام تجاری"
+
+#: .\product_module\templates\product_module\product_detail.html:125
+#: .\user_panel_module\templates\user_panel_module\user_shopping.html:27
+msgid "detail"
+msgstr "جزئیات "
+
+#: .\product_module\templates\product_module\product_detail.html:141
+msgid "related products"
+msgstr "محصولات مرتبط"
+
+#: .\product_module\templates\product_module\product_list.html:44
+msgid "product not found"
+msgstr "محصول یافت نشد"
+
+#: .\product_module\templates\product_module\product_list.html:56
+msgid "filter price"
+msgstr "فیلتر قیمت "
+
+#: .\product_module\templates\product_module\product_list.html:73
+msgid "filter"
+msgstr "فیلتر"
+
+#: .\site_module\models.py:54
+msgid "url title"
+msgstr " عنوان"
+
+#: .\templates\shared\site_footer_component.html:26
+msgid ""
+"Be aware of our new products and discounts by joining our social networks"
+msgstr ""
+"با عضویت در شبکه های اجتماعی ما از محصولات جدید و تخفیف های ما مطلع شوید"
+
+#: .\templates\shared\site_footer_component.html:38
+msgid "ABOUT US:"
+msgstr "درباره ما:"
+
+#: .\templates\shared\site_header_component.html:18
+msgid "admin"
+msgstr " مدیر"
+
+#: .\templates\shared\site_header_component.html:23
+msgid "shopping card"
+msgstr "سبد خرید"
+
+#: .\templates\shared\site_header_component.html:26
+#: .\user_panel_module\templates\user_panel_module\components\user_panel_menu_component.html:3
+msgid "user panel"
+msgstr "پنل کاربری"
+
+#: .\templates\shared\site_header_component.html:29
+msgid " log out"
+msgstr "خروج"
+
+#: .\templates\shared\site_header_component.html:32
+msgid "register"
+msgstr "ثبت نام"
+
+#: .\templates\shared\site_header_component.html:34
+msgid "log in"
+msgstr "وارد شدن"
+
+#: .\templates\shared\site_header_component.html:55
+msgid "languages"
+msgstr "زبان ها"
+
+#: .\templates\shared\site_header_component.html:69
+msgid " click here to search in our products 🔎"
+msgstr "برای جستجو در محصولات ما اینجا را کلیک کنید 🔎"
+
+#: .\templates\shared\site_header_component.html:80
+msgid "home"
+msgstr "خانه"
+
+#: .\user_panel_module\forms.py:34
+msgid "last name"
+msgstr "نام خانوادگی"
+
+#: .\user_panel_module\forms.py:35
+msgid "avatar"
+msgstr "آواتار"
+
+#: .\user_panel_module\forms.py:36
+msgid "address"
+msgstr "ادرس"
+
+#: .\user_panel_module\forms.py:42
+msgid " old password..."
+msgstr "رمز قدیمی"
+
+#: .\user_panel_module\forms.py:53
+msgid "new password..."
+msgstr "رمز عبور جدید"
+
+#: .\user_panel_module\templates\user_panel_module\change_password_page.html:41
+#: .\user_panel_module\templates\user_panel_module\components\user_panel_menu_component.html:5
+msgid "change password"
+msgstr "رمز عبور را تغییر دهید"
+
+#: .\user_panel_module\templates\user_panel_module\components\user_panel_menu_component.html:4
+msgid "edit information"
+msgstr "ویرایش اطلاعات"
+
+#: .\user_panel_module\templates\user_panel_module\components\user_panel_menu_component.html:6
+msgid "user basket"
+msgstr "سبد کاربر"
+
+#: .\user_panel_module\templates\user_panel_module\components\user_panel_menu_component.html:7
+msgid "user shopping"
+msgstr "خرید کاربر"
+
+#: .\user_panel_module\templates\user_panel_module\edit_profile_page.html:21
+msgid "submit"
+msgstr "ارسال"
+
+#: .\user_panel_module\templates\user_panel_module\user_basket_content.html:16
+msgid "count"
+msgstr "تعداد"
+
+#: .\user_panel_module\templates\user_panel_module\user_basket_content.html:17
+msgid "sum"
+msgstr "مجموع"
+
+#: .\user_panel_module\templates\user_panel_module\user_basket_content.html:81
+msgid "sum user basket"
+msgstr "جمع سبد کاربر"
+
+#: .\user_panel_module\templates\user_panel_module\user_basket_content.html:86
+msgid "payment"
+msgstr "پرداخت"
+
+#: .\user_panel_module\templates\user_panel_module\user_basket_content.html:99
+msgid "there is no product in your order"
+msgstr "هیچ محصولی در سفارش شما وجود ندارد"
+
+#: .\user_panel_module\templates\user_panel_module\user_panel_dashboard_page.html:14
+msgid "this is user dashboard"
+msgstr "این داشبورد کاربر است"
+
+#: .\user_panel_module\templates\user_panel_module\user_shopping.html:16
+#: .\user_panel_module\templates\user_panel_module\user_shopping_detail.html:17
+msgid "number"
+msgstr "شماره"
+
+#: .\user_panel_module\templates\user_panel_module\user_shopping.html:17
+#: .\user_panel_module\templates\user_panel_module\user_shopping_detail.html:18
+msgid "date"
+msgstr "تاریخ"
+
+#: .\user_panel_module\templates\user_panel_module\user_shopping.html:19
+msgid "info"
+msgstr "اطلاعات"
+
+#: .\user_panel_module\templates\user_panel_module\user_shopping_detail.html:21
+msgid "photo"
+msgstr "عکس"
+
+#~ msgid "engilsh"
+#~ msgstr "انگلیسی"
+
+#~ msgid "persian"
+#~ msgstr "فارسی"

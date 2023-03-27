@@ -1,0 +1,64 @@
+{% extends 'shared/_layout.html' %}
+{% load render_partial %}
+{% load i18n %}
+{% block title %}
+    list of product
+{% endblock %}
+{% block content %}
+    <section>
+        <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <form action="" method="post" class="form-group">
+                    {% csrf_token %}
+                    {{ form }}
+                        <input type="submit" value="{% trans 'search' %}" class="btn btn-success btn-block">
+                </form>
+            </div>
+        </div>
+            <div class="row">
+
+                <div class="col-sm-12 padding-right">
+                    {% if products %}
+                        <div class="features_items"><!--features_items-->
+                            <h2 class="title text-center">{% trans 'products' %} </h2>
+                            {% for product in products %}
+                                {% include 'product_module/includes/product_item_partial.html' with product=product %}
+                            {% endfor %}
+
+
+                            <div class="clearfix"></div>
+                            <ul class="pagination">
+
+                                {% if page_obj.has_previous %}
+                                    <li><a onclick="fillPage({{ page_obj.previous_page_number}})">previous</a></li>
+                                {% endif %}
+
+                                {% for pageNumber in paginator.page_range %}
+                                    <li class="{% if page_obj.number == pageNumber %}active{% endif %} "><a
+                                            onclick="fillPage({{ pageNumber }})" >{{ pageNumber }}</a></li>
+                                {% endfor %}
+
+
+
+                                {% if page_obj.has_next %}
+                                    <li><a onclick="fillPage({{ page_obj.next_page_number}})">next</a></li>
+                                {% endif %}
+
+
+                            </ul>
+                        </div><!--features_items-->
+                    {% else %}
+                        <div class="alert alert-warning">
+                            <p> product not found</p>
+                        </div>
+                    {% endif %}
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

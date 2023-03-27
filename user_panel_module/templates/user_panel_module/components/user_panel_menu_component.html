@@ -1,0 +1,10 @@
+{% load i18n %}
+<ul class="list-group list-group-flush">
+    <li class="list-group-item"><a href="{% url 'user_panel_dashboard' %}">{% trans 'user panel' %}</a></li>
+    <li class="list-group-item"><a href="{% url 'edit_profile_page' %}">{% trans 'edit information' %}</a></li>
+    <li class="list-group-item"><a href="{% url 'change_password_page' %}">{% trans 'change password' %}</a></li>
+    <li class="list-group-item"><a href="{% url 'user_basket_page' %}">{% trans 'user basket' %}</a></li>
+    <li class="list-group-item"><a href="{% url 'user_shopping_page' %}">{% trans 'user shopping' %}</a></li>
+
+
+</ul>

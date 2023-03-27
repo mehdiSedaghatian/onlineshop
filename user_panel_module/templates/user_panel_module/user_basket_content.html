@@ -1,0 +1,106 @@
+{% load render_partial %}
+{% load i18n %}
+{% if order.orderdetail_set.all %}
+    <div class="container">
+        <div class="row">
+
+            <section id="cart_items">
+                <div class="container">
+                    <div class="table-responsive cart_info">
+                        <table class="table table-condensed">
+                            <thead>
+                            <tr class="cart_menu">
+                                <td class="image">{% trans 'products' %}</td>
+                                <td class="description"></td>
+                                <td class="price">{% trans 'price' %}</td>
+                                <td class="quantity">{% trans 'count' %}</td>
+                                <td class="total">{% trans 'sum' %}</td>
+                                <td></td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for detail in order.orderdetail_set.all %}
+                                <tr>
+                                    <td>
+                                        <a href=""><img src="{{ detail.product.image.url }}" alt=""
+                                                        style="width: 75px;height: 75px "></a>
+                                    </td>
+                                    <td class="cart_description">
+                                        <h4><a href="" style="
+                                        text-align: left;
+                                        text-overflow: ellipsis;
+                                        overflow: hidden;
+                                        width: 300px;
+                                        display: -webkit-box;
+                                        -webkit-line-clamp: 1;
+                                        -webkit-box-orient: vertical;
+                                    "> {{ detail.product.title }}</a></h4>
+
+                                    </td>
+                                    <td class="cart_price">
+                                        <p>{{ detail.product.price }}</p>
+                                    </td>
+                                    <td class="cart_quantity">
+                                        <div class="cart_quantity_button">
+                                            <a class="cart_quantity_up"
+                                               onclick="change_order_detail_count({{ detail.id }},'increase')"
+                                               style="cursor: pointer"> + </a>
+                                            <input class="cart_quantity_input" type="text" name="quantity"
+                                                   value="{{ detail.count }}"
+                                                   autocomplete="off" size="2">
+                                            <a class="cart_quantity_down"
+                                               onclick="change_order_detail_count({{ detail.id }},'decrease')"
+                                               style="cursor: pointer"> - </a>
+                                        </div>
+                                    </td>
+                                    <td class="cart_total">
+                                        <p class="cart_total_price">{{ detail.get_total_price }}</p>
+                                        {#                                        <p class="cart_total_price">{% multiply detail.count detail.product.price %}</p>#}
+                                    </td>
+                                    <td class="cart_delete">
+                                        <a class="cart_quantity_delete"
+                                           onclick="removeOrderDetail({{ detail.id }})"><i
+                                                class="fa fa-times"></i></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section> <!--/#cart_items-->
+
+            <section id="do_action">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-sm-12">
+                            <div class="total_area">
+                                <ul>
+                                    <li> <span class="pull-right">{{ sum }}</span>{% trans 'sum user basket' %}</li>
+
+                                </ul>
+                                <a class="btn btn-default check_out btn-block " style="width: 100%"
+                                   href="{% url 'not_yet_completed' %}
+">{% trans 'payment' %}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--/#do_action-->
+        </div>
+    </div>
+{% else %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-danger">
+                    <p>{% trans 'there is no product in your order' %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+

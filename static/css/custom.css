@@ -1,0 +1,12 @@
+/*.one_line_text{*/
+/*    text-align: left;*/
+/*    text-overflow: ellipsis;*/
+/*    overflow: hidden;*/
+/*    width: 8px;*/
+/*    display: -webkit-box;*/
+/*    -webkit-line-clamp: 1;*/
+/*    -webkit-box-orient: vertical;*/
+/*}*/
+.reset-password {
+    margin-top: 24px;
+}
